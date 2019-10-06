@@ -1,5 +1,5 @@
 def intercom
-  Intercom::Client.new(token: "<your_access_token>")
+  Intercom::Client.new(token: ENV['INTERCOM_ACCESS_TOKEN'])
 end
 
 def get_team_inboxes

@@ -6,6 +6,7 @@
 
 - [Ruby SDK for Intercom API](https://github.com/intercom/intercom-ruby)
 - [Ruby SDK for Datadog API](https://github.com/DataDog/dogapi-rb)
+- [Dotenv](https://github.com/bkeepers/dotenv)
 
 ### Usage
 

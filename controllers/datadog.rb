@@ -1,5 +1,5 @@
 def datadog
-  Dogapi::Client.new("<your_api_key>", "<your_application_key>")
+  Dogapi::Client.new(ENV['DATADOG_API_KEY'], ENV['DATADOG_APPLICATION_KEY'])
 end
 
 def send_inbox_metrics(metrics)

@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'dogapi'
 require 'intercom'
+require 'dotenv/load'
 require_relative 'controllers/datadog'
 require_relative 'controllers/intercom'
 
