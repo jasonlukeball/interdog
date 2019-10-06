@@ -11,8 +11,8 @@ For every team inbox In Intercom, two metrics will be sent to Datadog:
 ### Dependencies
 
 - [Dotenv](https://github.com/bkeepers/dotenv)
-- [Ruby SDK for Intercom API](https://github.com/intercom/intercom-ruby)
-- [Ruby SDK for Datadog API](https://github.com/DataDog/dogapi-rb)
+- [Intercom Ruby SDK](https://github.com/intercom/intercom-ruby)
+- [Datadog Ruby SDK](https://github.com/DataDog/dogapi-rb)
 
 ### Installation
 
