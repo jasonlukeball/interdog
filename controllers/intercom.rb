@@ -2,17 +2,21 @@ def intercom
   Intercom::Client.new(token: ENV['INTERCOM_ACCESS_TOKEN'])
 end
 
+# gets a list of team inboxes used to collect metrics
 def get_team_inboxes
   admins = intercom.admins.all.each {}
   admins.map { |admin| {id: admin.id, name: admin.name} if admin.is_a?(Intercom::Team) }.compact
 end
 
+# gets open conversations in the specified team inbox and returns timestamps used to determine wait time
 def get_open_convos_for_team_inbox(team_id)
   intercom.conversations.find_all(type: 'admin', id: team_id, open: true).map do |convo|
     { id: convo.id, created_at: convo.created_at.to_i, updated_at: convo.updated_at.to_i, waiting_since: convo.waiting_since.to_i}
   end
 end
 
+# sorts list of conversations from team inbox by 'waiting longest'
+# calculates the wait time for the 'oldest conversation'
 def get_inbox_wait_time(conversations, time_unit)
   conversations_sorted = conversations.sort_by {|hsh| hsh[:waiting_since]}
   oldest_conversation = conversations_sorted[0]
@@ -27,6 +31,7 @@ def get_inbox_wait_time(conversations, time_unit)
   end
 end
 
+# calculates wait time in minutes, hours or days
 def get_inbox_wait_time_by_unit(seconds, time_unit)
   if time_unit == "minutes"
     (seconds/60).round(0)
@@ -37,6 +42,7 @@ def get_inbox_wait_time_by_unit(seconds, time_unit)
   end
 end
 
+# generates inbox metrics to send to datadog
 def get_inbox_metrics(time_unit)
   data = []
   inboxes = get_team_inboxes
