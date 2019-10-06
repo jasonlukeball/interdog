@@ -1,6 +1,6 @@
 # Interdog
 
-- Pushes data from [Intercom](www.intercom.com) > [Datadog](datadoghq.com) for realtime reporting
+- Pushes data from [Intercom](http://www.intercom.com) > [Datadog](http://datadoghq.com) for realtime reporting
 
 ### Dependencies
 
