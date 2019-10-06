@@ -2,7 +2,7 @@
 
 This library is intended to help teams working out of multiple inboxes within [Intercom](http://www.intercom.com). 
 
-It allows teams to get a 'birds eye view' of their inboxes by sending metrics to [Datadog](http://datadoghq.com) for realtime reporting. 
+It allows teams to get a 'birds eye view' of their inboxes by sending metrics to [Datadog](http://datadoghq.com) for realtime dashboards. 
 
 For every team inbox In Intercom, two metrics will be sent to Datadog:
 1. `intercom.inboxes.inbox_name.count` - Total count of open conversations in the inbox 
