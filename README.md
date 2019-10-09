@@ -13,7 +13,7 @@ For every team inbox In Intercom, two metrics will be sent to Datadog:
 - [Dotenv](https://github.com/bkeepers/dotenv)
 - [Intercom Ruby SDK](https://github.com/intercom/intercom-ruby)
 - [Datadog Ruby SDK](https://github.com/DataDog/dogapi-rb)
-- Intercom App using API Version  `1.3` or earlier ([changelog](https://developers.intercom.com/building-apps/docs/api-changelog)) 
+- [Intercom REST API App](https://developers.intercom.com/building-apps/docs) using API Version  `1.4` or later ([changelog](https://developers.intercom.com/building-apps/docs/api-changelog)) 
 
 ### Installation
 
