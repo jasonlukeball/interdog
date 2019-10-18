@@ -4,7 +4,9 @@ end
 
 # gets a list of team inboxes used to collect metrics
 def get_team_inboxes
-  intercom.teams.all.map {|team| {id: team.id, name: team.name}}
+  data = [{id: 'nobody', name: 'Unassigned'}]
+  intercom.teams.all.each {|team| data << {id: team.id, name: team.name}}
+  data
 end
 
 # gets open conversations in the specified team inbox and returns timestamps used to determine wait time
